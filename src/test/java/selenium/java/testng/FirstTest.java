@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterTest;
 
-public class FirstTestNG {
+public class FirstTest {
 
 	@BeforeTest
 	public void beforeTest() {
