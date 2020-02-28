@@ -1,4 +1,4 @@
-package selenium.java.testng;
+/*package selenium.java.testng;
 
 import org.testng.annotations.Test;
 
@@ -53,3 +53,4 @@ public class FirstTest {
 	}
 
 }
+*/
