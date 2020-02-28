@@ -5,6 +5,9 @@ import org.testng.annotations.Test;
 import selenium.java.library;
 
 import org.testng.annotations.BeforeTest;
+
+import java.net.MalformedURLException;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -21,9 +24,9 @@ public class TestandQuiz {
 	String newTab;
 
 	@BeforeTest
-	public void beforeTest() throws InterruptedException {
+	public void beforeTest() throws InterruptedException, MalformedURLException {
 		System.out.println("I am running before test");
-		driver = library.launchChrome("https://www.testandquiz.com/selenium/testing.html");
+		driver = library.launchChromeRemote("https://www.testandquiz.com/selenium/testing.html");
 		originalTab = driver.getWindowHandle();
 		System.out.println(originalTab);
 		Thread.sleep(5000);
@@ -53,7 +56,7 @@ public class TestandQuiz {
 		// other property
 		driver.findElement(By.id("idOfButton")).click();
 		driver.findElement(By.xpath("//input[@id=\"female\"]")).click();
-		
+
 		// --//input[@type="checkbox"][1]
 		driver.findElement(By.xpath("//input[@type='checkbox' and @value='Automation']")).click();
 
@@ -61,7 +64,7 @@ public class TestandQuiz {
 		// =driver.findElement(By.id("manual"));------((//select[@id="testingDropdown"])/option[@id="manual"])
 		new Select(driver.findElement(By.id("testingDropdown"))).selectByValue("Performance");// .selectByIndex(3);//Performance
 		Thread.sleep(5000);
-		
+
 		// Alert Box--dblClkBtn
 		Actions action = new Actions(driver);
 		action.doubleClick(driver.findElement(By.id("dblClkBtn"))).perform();
@@ -72,30 +75,29 @@ public class TestandQuiz {
 
 		// alert('hi, JavaTpoint Testing');
 
-		
 		// -----//b[text()="Click button to generate Alert box : "]
-		//action1.click(driver.findElement(By.xpath("//b[text()=\"Click button to generate Alert box : \"]")));
-		
-		
+		// action1.click(driver.findElement(By.xpath("//b[text()=\"Click button to
+		// generate Alert box : \"]")));
+
 		driver.findElement(By.xpath("//button[text()=\"Generate Alert Box\"]")).click();
 		Thread.sleep(5000);
-		Alert alert1=driver.switchTo().alert();
+		Alert alert1 = driver.switchTo().alert();
 		alert1.accept();
-		
-		////button[text()="Generate Confirm Box"]
+
+		//// button[text()="Generate Confirm Box"]
 		driver.findElement(By.xpath("//button[text()=\"Generate Confirm Box\"]")).click();
 		Thread.sleep(5000);
-		Alert alert2= driver.switchTo().alert();
+		Alert alert2 = driver.switchTo().alert();
 		alert2.dismiss();
-		
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		driver.manage().window().maximize();
 		js.executeScript("window.scrollBy(0,1000)");
-		
+
 		Actions action1 = new Actions(driver);
-		action1.dragAndDrop(driver.findElement(By.id("//img[@id=\"sourceImage\"]")),driver.findElement(By.id("//div[@id=\"targetDiv\"]")));
-		
-		
+		action1.dragAndDrop(driver.findElement(By.id("//img[@id=\"sourceImage\"]")),
+				driver.findElement(By.id("//div[@id=\"targetDiv\"]")));
+
 		Thread.sleep(5000);
 		System.out.println("end");
 

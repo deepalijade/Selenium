@@ -21,6 +21,7 @@ public class PrintAddress {
 		System.out.println(t);
 		//String mail= driver.findElement(By.xpath(""))
 		
+		//Closing driver
 		driver.close();
 		
 		

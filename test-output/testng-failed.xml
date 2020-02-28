@@ -6,7 +6,6 @@
       <class name="selenium.java.testng.TestandQuiz">
         <methods>
           <include name="beforeTest"/>
-          <include name="afterTest"/>
           <include name="automate"/>
         </methods>
       </class> <!-- selenium.java.testng.TestandQuiz -->
