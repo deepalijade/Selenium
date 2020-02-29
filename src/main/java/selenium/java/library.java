@@ -8,6 +8,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -22,6 +23,9 @@ public class library {
 	}
 	public static WebDriver launchChrome(String url)
 	{
+		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+		capabilities.setCapability(CapabilityType.BROWSER_NAME, "CHROME");
+		capabilities.setCapability(ChromeDriver., value);
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\deepa\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		ChromeDriver driver= new ChromeDriver();
 		driver.get(url);
