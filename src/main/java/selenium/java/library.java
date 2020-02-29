@@ -23,9 +23,6 @@ public class library {
 	}
 	public static WebDriver launchChrome(String url)
 	{
-		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-		capabilities.setCapability(CapabilityType.BROWSER_NAME, "CHROME");
-		capabilities.setCapability(ChromeDriver., value);
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\deepa\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		ChromeDriver driver= new ChromeDriver();
 		driver.get(url);
@@ -42,7 +39,7 @@ public class library {
 	public static WebDriver launchChromeRemote(String url) throws MalformedURLException {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\deepa\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		DesiredCapabilities capability = DesiredCapabilities.chrome();
-		WebDriver temp = new RemoteWebDriver(new URL("http://192.168.86.209:4444/wd/hub"), capability);
+		WebDriver temp = new RemoteWebDriver(new URL("http://192.168.86.235:4444/wd/hub"), capability);
 		//WebDriver temp=new ChromeDriver();
 		temp.get(url);
 		return temp;
